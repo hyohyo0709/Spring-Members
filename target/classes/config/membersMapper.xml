@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <mapper namespace="members">
+    
+    <insert id="join" parameterType="dto.MembersDTO">
+     insert into 
+    members_hj(num, mem_id, mem_pass, mem_email
+    ,mem_name, mem_citizen_id_1, mem_citizen_id_2
+    ,mem_hobby, mem_introduce)
+    values(members_hj_num_seq.nextval, #{mem_id}, #{mem_pass}
+    , #{mem_email}, #{mem_name}
+    
+    
+    , #{mem_citizen_id_1}
+    
+    
+    , #{mem_citizen_id_2}
+    
+    <if test="mem_hobby!=null">
+    , #{mem_hobby}
+    </if>
+    <if test="mem_introduce!=null">
+    , #{mem_introduce}
+    </if>
+    )
+    
+    </insert>
+   
+    
+    
+    
+    
+    </mapper>
